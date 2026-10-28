@@ -1,0 +1,91 @@
+ strored procedur bir transactiondur çünkü beginle baslar end ile biter
+
+atomik yapı
+kalıcılık 
+ayrılma 
+tutarlılık
+
+CREATE PROCEDURE verileri_getir
+AS
+
+SELECT *
+FROM musteri
+
+GO
+
+exec verileri_getir
+-------------------------------------------------------
+alter procedure enfazla_mal
+as 
+
+SELECT        musteri_kodu, SUM(urun_tutar) 
+FROM            verilen_urun
+GROUP BY musteri_kodu
+ORDER BY sum ( urun_tutar) desc
+go
+exec enfazla_mal
+-----------------------------------------
+
+create procedure sorgula_toplam
+(@musteri_kodu int)
+as
+begin 
+SELECT   SUM(urun_tutar) 
+FROM    verilen_urun
+where musteri_kodu = @musteri_kodu
+end
+-------------------------------------
+
+create trigger (trigger_name)
+on (tablo adı)
+[before/after]
+{insert/update/delete}
+FOR EACH ROW //---> HER SATIR İÇİN
+BEGİN
+END
+
+-------------------------------------
+create trigger goster
+on musteri
+after 
+insert
+as
+begin 
+SELECT  *
+FROM   musteri
+end
+----------------------------------
+
+insert into musteri (musteri_kodu,musteri_adi,musteri_soyadi,adres,tel)
+values (855,'ırmak','afsin','ist','1234')
+------------------------------------------------------------------
+
+CREATE TRIGGER guncelleme
+ON alinan_sut
+AFTER INSERT
+AS
+BEGIN
+ 
+    UPDATE alinan_sut
+    SET sut_tutar = sut_tutar * 40 
+    FROM alinan_sut
+    
+END
+--------------------------------------------------
+INSERT INTO alinan_sut (musteri_kodu, sut_fiyat, sut_lt, sut_tutar, tarih)
+VALUES (855, 456.00, 34, 15.00, '2025-07-12');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+SELECT        sut_id, musteri_kodu, sut_fiyat, sut_lt, sut_tutar, tarih
+FROM            alinan_sut
+WHERE        (musteri_kodu = 223)
+
+
+
+order by sıralama a dan z ye 
+order desk tersten sıralama 
+group by 
+
+
+SELECT        musteri_kodu, SUM(sut_lt) AS Expr1
+FROM            alinan_sut
+GROUP BY musteri_kodu
+
+
+SELECT        musteri_kodu, SUM(sut_lt) AS Expr1
+FROM            alinan_sut
+GROUP BY musteri_kodu
+order by sum (sut_lt)
+
+SELECT        musteri_kodu, SUM(sut_lt) 
+FROM            alinan_sut
+GROUP BY musteri_kodu
+ORDER BY SUM(sut_lt) desc
+
+musteri koduna göre en fazla süt vereni sıraladık en coktan en aza
+
+SELECT        musteri_kodu, SUM(urun_tutar) AS Expr1
+FROM            verilen_urun
+GROUP BY musteri_kodu
+ORDER BY Expr1 DESC----------> order by sum ( urun_tutar)
+en fazla ürün alandan en aza
+--------------------------------------------------------------
+stored procedur:
+-----------------------------
+exec addmusteri     @musteri_kodu = 2345, 
+@musteri_adi = 'ırmak',
+@musteri_soyadi ='afsin',
+@adres = 'ad',
+@tel = '0987652'; 
+----------------------------------
+exec  addurunadi
+ @urun_kodu= 25,
+@urun_adi= 'masa'
+-------------------------------------
+exec  addurunadi
+ @urun_kodu= 26,
+@urun_adi= 'sandalye'
+select* from urun_kodu
+
+
+
+
+
+
+
+
+
+
+
+

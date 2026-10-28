@@ -1,0 +1,109 @@
+create database bakkal 
+go 
+
+use bakkal
+
+go 
+
+create table urun (
+urun_id int primary key ,
+urun_adi varchar(50) ,
+urun_fiyat smallmoney ,
+urun_miktar int ,
+katagori_id int );
+
+
+create table katagori (
+
+katagori_id int primary key ,
+katagori_miktar int );
+
+
+create table borc(
+
+borc_musteriler varchar(50) primary key ,
+borc_tedarikci int ,
+borc_dukkan int);
+
+create table musteri(
+musteri_id int primary key ,
+musteri_adi varchar(50) ,
+musteri_soyadi varchar(50),
+musteri_iletisim varchar(50),
+
+
+create table satis(
+satis_id int primary key ,
+satis_adi varchar (50),
+satis_hesabi smallmoney );
+
+create table alis(
+alis_id int primary key,
+alis_stok int ,
+alis_adi varchar(50),
+alis_hesabi smallmoney);
+
+
+(örnekkk)
+ use bakkal;
+insert into (tablo_adi) () values  () 
+ 
+insert into musteri (musteri_id, musteri_adi) values ( 3 , 'ali')
+
+
+
+insert into urun (urun_id , urun_adi,urun_fiyat, urun_miktar) values (1, 'ekmek' , 15 , 100) 
+insert into urun (urun_id , urun_adi,urun_fiyat, urun_miktar) values (2 , 'su' , 10 , 177) 
+insert into urun (urun_id , urun_adi,urun_fiyat, urun_miktar) values (3 , 'peynir' , 20 , 108) 
+insert into urun (urun_id , urun_adi,urun_fiyat, urun_miktar) values (4 , 'zeytin' , 17 , 190) 
+insert into urun  (urun_id , urun_adi,urun_fiyat, urun_miktar) values (5 , 'domates' , 7, 100) 
+
+
+insert into satis ( satis_id, satis_adi, satis_hesabi) values (6 ,'ekmek_satis', 345)
+insert into satis ( satis_id, satis_adi, satis_hesabi) values (7 ,'su_satis', 234)
+insert into satis ( satis_id, satis_adi, satis_hesabi) values (8 ,'peynir_satis', 567)
+insert into satis ( satis_id, satis_adi, satis_hesabi) values (9 ,'zeytin_satis', 378)
+insert into satis ( satis_id, satis_adi, satis_hesabi) values (21 ,'domates_satis', 395)
+
+insert into musteri (musteri_id , musteri_adi,musteri_soyadi,musteri_iletisim) values (5, 'irmak' ,'sude' , 'karanfil sokak')
+insert into musteri (musteri_id , musteri_adi,musteri_soyadi,musteri_iletisim) values (66, 'damla' ,'su' , 'karanfil sokak')
+insert into musteri (musteri_id , musteri_adi,musteri_soyadi,musteri_iletisim) values (7, 'irem' ,'xx' , 'aydın sokak')
+insert into musteri (musteri_id , musteri_adi,musteri_soyadi,musteri_iletisim) values (90, 'ayse' ,'ay' , 'karanfil sokak')
+insert into musteri (musteri_id , musteri_adi,musteri_soyadi,musteri_iletisim) values (50, 'sude' ,'aydın' , 'yonca sokak')
+
+insert into katagori (katagori_id , katagori_miktar) values (67, 567)
+insert into katagori (katagori_id , katagori_miktar) values (87, 577)
+insert into katagori (katagori_id , katagori_miktar) values (69, 568)
+insert into katagori (katagori_id , katagori_miktar) values (60, 57)
+insert into katagori (katagori_id , katagori_miktar) values (89, 58)
+
+insert into borc  (borc_musteriler , borc_tedarikci, borc_dukkan) values ('irmak' , 12 , 23) 
+insert into borc (borc_musteriler , borc_tedarikci, borc_dukkan) values ('damla' , 18 , 233) 
+insert into borc (borc_musteriler , borc_tedarikci, borc_dukkan) values ('irem' , 16 , 234) 
+insert into borc (borc_musteriler , borc_tedarikci, borc_dukkan) values ('ayse' , 17 , 235) 
+insert into borc (borc_musteriler , borc_tedarikci, borc_dukkan) values ('sude' , 175 , 236) 
+
+
+insert into alis (alis_id , alis_stok, alis_adi,alis_hesabi) values (45 , 34, 'ekmek_alis' , 3465)
+insert into alis (alis_id , alis_stok, alis_adi,alis_hesabi) values (453 ,374, 'peynir_alis' , 39485)
+insert into alis (alis_id , alis_stok, alis_adi,alis_hesabi) values (452, 364, 'su_alis' , 3745)
+insert into alis (alis_id , alis_stok, alis_adi,alis_hesabi) values (456, 354, 'zeytin_alis' , 3485)
+insert into alis (alis_id , alis_stok, alis_adi,alis_hesabi) values (457, 3774, 'domates_alis' , 3495)
+
+update güncelleme yaparak verilen değeri değiştirebliriz 
+
+update borc 
+SET miktar =1800
+WHERE borc_id=3
+
+int de '' kullanılmaz
+
+DELETE FROM tablo_adi WHERE borc_id=3
+eğer bir değeri silmek istersek;
+irmak afsinnnnnnnnn
+
+
+
+
+
+

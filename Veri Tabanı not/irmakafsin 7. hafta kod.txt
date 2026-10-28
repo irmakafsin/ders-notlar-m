@@ -1,0 +1,62 @@
+SELECT     quantity
+FROM       production.stocks
+WHERE     (quantity > 14)
+σ quantity>14 (stocks) (ilişkisel cebir karşılığı)
+(seçme)
+
+SELECT   store_id, product_id, quantity
+FROM     production.stocks
+π product_id, quantity (stocks)(ilişkisel cebir karşılığı)
+(sutün yapma)
+
+
+SELECT   product_id
+FROM     production.stocks
+WHERE    (quantity > 14)
+π product_id (σ quantity >14 (stocks))(ilişkisel cebir karşılığı)
+(14 den büyük olan sutun yapma)
+
+
+
+
+
+
+
+
+
+
+birleşim işareti (küme)
+
+R1 u R2 biçiminde yazılır 
+(aynı veriler toplanır. tek şekilde yazılır)
+
+kesişim işlemi (küme)
+
+R1 n R2 biçiminde yazılır.
+(sadece aynı veriler yazılır)
+
+fark işlemi (küme)
+
+R1 - R2 biçiminde yazılır. (R1 - R2 R2 - R1 )
+
+Kartezyen Çarpım işlemi :
+
+R1 x R2 
+
+v = veya 
+ters v = ve
+
+irmakafsin 
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+1nf 2 nf ve 3nf sınavda cıkıcak
+transaction hareket cıkıcak (veri tabanında yapılan işlemlerin tümü (veri ekleme silme vs))
+rollback ve commit önemli rollback islem barasız comit basarılı 
+asid kavramı 
+asit bütünlük yarıda kesilemez
+Tutarlılık (consistency). 
+Ayrılma (isolation). 
+Kalıcılık (durability). 
+
+join cıkar (iki tablodan aynı veriyi çekme)
+SELECT musteri_kodu,sut_tutar,urun_tutar istenen seyleri yaz
+FROM alinan_sut ilk tablo 
+INNER JOIN verilen_urun ikinci tablo 
+ON alinan_sut.musteri_kodu = verilen_urun.musteri_kodu; ortaklarla birleştir
+right left cıkar
+
+SELECT   verilen_urun.musteri_kodu, sum(para.verilen_para), sum(verilen_urun.urun_tutar)
+FROM     para
+INNER JOIN verilen_urun
+ ON para.musteri_kodu = verilen_urun.musteri_kodu
+group by verilen_urun.musteri_kodu
+order by sum (para.verilen_para) desc
+
+group by ve oreder by çalıstırma sum ve countla 
+
+procedure olusturma
+
+create procedure hizala
+as
+begin
+   SELECT   verilen_urun.musteri_kodu, sum(para.verilen_para), sum(verilen_urun.urun_tutar)
+   FROM     para
+   INNER JOIN verilen_urun
+   ON para.musteri_kodu = verilen_urun.musteri_kodu
+   group by verilen_urun.musteri_kodu
+   order by sum (para.verilen_para) desc
+end
+
+create procedure hizala2
+@musteri_kodu int
+as
+ begin 
+SELECT   verilen_urun.musteri_kodu, sum(para.verilen_para), sum(verilen_urun.urun_tutar)
+   FROM     para
+   INNER JOIN verilen_urun
+   ON para.musteri_kodu = verilen_urun.musteri_kodu
+   where para.musteri_kodu=@musteri_kodu
+   group by verilen_urun.musteri_kodu
+   order by sum (para.verilen_para) desc
+   end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

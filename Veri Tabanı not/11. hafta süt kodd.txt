@@ -1,0 +1,34 @@
+1NF atamoik olma kuralı : her satırda bir değer olacak
+----------------------------------------------------------------------------------------
+2NF tekrar eden değerleri kaldırmalıyız bu da ayru tablolara bölerek (mesela dagıtım tablosunda column olarak
+müsteri no , sehir kodu varken stok tablosunda müstreri no , miktar vardır ( çok onemli bu da müsteri no anahtar yapar))!!
+------------------------------------------------------------------------------------------
+3NF hala tekrar olduğu için geçişli işlemsel bagımlılık
+ ( sorun veri ekleyememe , veri silememe) ( çözüm tablolrı birbirindnen ayırarak sehir tablosuna sehir adi ve sehir kodu 
+müsteri kısmında da musteri no ve sehir kodu olarak ayırdık )
+
+----------------------------------------------------------------------------------------------
+SELECT        sum ( sut_lt)
+FROM            alinan_sut
+---------------------------------------------------------------------------------------------
+SELECT        SUM(sut_lt) * 40 AS Güncel_fiyatlandırma
+FROM            alinan_sut
+---------------------------------------------------------------------------------------------
+SELECT       DATEDIFF(year, '2014/03/09'- '2014/02/13') AS DateDiff;
+FROM            alinan_sut
+----------------------------------------------------------------------------------------------
+SELECT        SUM(sut_lt) * 40 / 1046 AS ciro
+FROM            alinan_sut
+----------------------------------------------------------------------------------------------
+transaction hareket kavramı commit edilen bütün işlemler (finalde sözel cıkar)
+begin (baslama) transaction ve end (bitiş) transaction 
+bölünmezlik (atomicity) işlemin tutarlılığının sağlanması işlemin bir bütün olması 
+işlemin ya hepsi yapılır ya da hiç yapılmaz
+tutarlılık (consistency)  
+işlem basarılıysa commit 
+role back işlemi geri cekme (tutarsız işlem)
+planına zincirleme kurtarma gerektiren (cascading rollback) işletim planı denir
+
+
+
+

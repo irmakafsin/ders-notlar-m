@@ -1,0 +1,41 @@
+ create table ornek_modelll (
+ urun_adi nchar , 
+ urun_alis_fiyat smallmoney ,
+ urun_satis_fiyat smallmoney,
+urun_kategori int,
+ frima_id int );
+
+ create table kategori(
+ kategori_id int,
+ kategori_adi nchar,
+ kdv_oran smallmoney);
+ 
+ create table frima(
+ frima_id int,
+ frima_telefon int,
+ frima_adres nchar);
+
+
+ create table musteri (
+ musteri_id int ,
+ musteri_adi nchar,
+ musteri_soyadi nchar,
+ musteri_adres nchar,
+ musteri_telefon int);
+
+
+ create table siparis(
+ siparis_id int,
+ musteri_id int,
+ tarih int);
+
+
+ 
+ create table yer_aldigi (
+ yer_ldigi_siparis_id int,
+ yer_aldigi_urun_adi nchar,
+ yer_aldigi_adet smallmoney);
+
+
+
+

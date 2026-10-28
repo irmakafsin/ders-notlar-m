@@ -1,0 +1,75 @@
+SELECT        SUM(sut_lt) / COUNT(sut_lt) AS Expr1
+FROM            alinan_sut
+------------------------------------------------------------------------
+
+SELECT  sut_id, musteri_kodu, sut_fiyat, sut_lt, sut_tutar, tarih
+FROM    alinan_sut
+WHERE  (sut_lt < 
+        SELECT  SUM(sut_lt) / COUNT(sut_lt) AS Expr1
+FROM   alinan_sut))
+ortalama bulma
+
+-------------------------------------------------------------
+SELECT   sut_id, musteri_kodu, sut_fiyat, sut_lt, sut_tutar, tarih
+FROM     alinan_sut
+WHERE    (sut_lt < 
+       SELECT  avg (sut_lt)
+FROM  alinan_sut AS alinan_sut_1))
+ortalama bulma
+----------------------------------------------
+SELECT        sut_id, musteri_kodu, sut_fiyat, sut_lt, sut_tutar, tarih
+FROM            alinan_sut
+WHERE        (musteri_kodu = 229)
+---------------------------------------------------------
+
+SELECT        musteri_kodu, SUM(sut_lt) AS Expr1
+FROM            alinan_sut
+GROUP BY musteri_kodu
+----------------------------------------------
+SELECT musteri_kodu,sut_tutar,urun_tutar
+FROM alinan_sut
+INNER JOIN verilen_urun
+ON alinan_sut.musteri_kodu = verilen_urun.musteri_kodu;
+
+-------------------------------------------------------
+SELECT       sum( alinan_sut.musteri_kodu), sum(alinan_sut.sut_tutar), sum(verilen_urun.urun_tutar)
+FROM         alinan_sut
+INNER JOIN verilen_urun
+ ON alinan_sut.musteri_kodu = verilen_urun.musteri_kodu
+group by alinan_sut.musteri_kodu
+order by alinan_sut.musteri_kodu desc
+----------------------------------------------------------------------
+SELECT        AVG(ali) AS Expr1
+FROM            (SELECT        musteri_kodu, SUM(sut_lt) AS ali
+                          FROM            alinan_sut
+                          GROUP BY musteri_kodu) AS derivedtbl_1
+--------------------------------------------------------------------
+
+select avg (urun_tutar)
+from verilen_urun
+
+------------------------------------------------------
+
+SELECT        musteri_kodu, SUM(sut_lt) AS Expr1
+FROM            alinan_sut
+WHERE        (musteri_kodu = 229)
+GROUP BY musteri_kodu
+------------------------------------------------------
+
+CREATE PROCEDURE ayliksutgetir
+    @Time1 DATE,
+    @Time2 DATE
+AS
+BEGIN
+
+    SELECT sum(sut_tutar)
+from alinan_sut
+where (tarih between '2014-12-01' and '2014-12-30')
+END;
+---------------------------------------------
+exec ayliksutgetir '2014-11-01' , '2014-12-01'
+ırmak afsin
+
+
+
+

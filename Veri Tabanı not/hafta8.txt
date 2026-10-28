@@ -1,0 +1,60 @@
+
+SELECT *
+FROM siparis_detayi
+INNER JOIN siparisler
+on siparis_detayi.order id= siaprisler,order,id
+
+SELECT        brand_id, brand_name
+FROM            markalar
+WHERE        (brand_id LIKE 'c%')
+
+
+SELECT        store_id, product_id, quantity
+FROM            stok
+WHERE        (quantity BETWEEN 25 AND 40)
+
+SELECT        AVG(quantity) AS Expr1
+FROM            stok
+
+SELECT        store_id, product_id, quantity
+FROM            stok
+WHERE        (quantity < 14)
+
+SELECT        store_id, product_id, quantity
+FROM            stok
+WHERE        (quantity > 14)
+UNION
+SELECT        AVG(quantity) AS Expr1
+FROM            stok AS stok_1   ( ortalama hesaplama) 
+
+
+SELECT        discount
+FROM            siparis_detay
+UNION ALL
+SELECT        order_id
+FROM            siparisler
+
+SELECT        first_name
+FROM            calisanlar
+UNION ALL
+SELECT        product_name
+FROM            urunler     ( tablo birleştirme) 
+
+SELECT        store_id, product_id, quantity
+FROM            stok
+WHERE        (quantity >
+                             (SELECT        AVG(quantity) AS Expr1
+                               FROM            stok AS stok_1))
+
+                            (iç içe yazma) 
+
+
+SELECT        product_id, product_name, brand_id, category_id, model_year, list_price
+FROM            urunler
+WHERE        (model_year BETWEEN 2016 AND 2018) AND (list_price < 1000)
+
+SELECT        product_id, product_name, brand_id, category_id, model_year, list_price
+FROM            urunler
+WHERE        (model_year BETWEEN 2016 AND 2018) AND (list_price <
+                             (SELECT        AVG(list_price) AS Expr1
+                               FROM            urunler AS urunler_1))
