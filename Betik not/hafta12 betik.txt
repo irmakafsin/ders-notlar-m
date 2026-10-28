@@ -1,0 +1,32 @@
+ırmak afsin hafta 12 betik
+
+function isimGoster()
+{
+    //isim degiskeni sadece bu fonksiyon içinde erişilebilir
+    var isim="Asya";
+    alert(isim);
+}
+alert(isim); //değişken var ile tanımlandığı içn fonksiyon dışından erişilemez
+
+if( 15 > 10) {
+    var sayi = 17;
+}
+alert(sayi); //sayi degiskenine if bloğu dışından da erişilebilir(
+
+VM130:7 Uncaught ReferenceError: isim is not defined
+    at <anonymous>:7:7
+(anonymous) @ VM130:7Understand this error
+
+-------------------------------------------------
+function isimGoster()
+{
+    //isim degiskeni sadece bu fonksiyon içinde erişilebilir
+    var isim="Asya";
+    alert(isim);
+}
+isimGoster()
+
+if( 15 > 10) {
+    var sayi = 17;
+}
+alert(sayi); //sayi degiskenine if bloğu dışından da erişilebilir

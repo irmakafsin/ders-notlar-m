@@ -1,0 +1,35 @@
+ırmak afsin
+
+sinif =[[  {"ad": "sude", "yaş": 19},
+        {"ad": "nisa", "yas": 21}],
+        [{"ad": "ırmak", "yas": 21} ,
+        {"ad": "damla", "yas": 19}]]
+for masalar in sinif:
+    print(masalar)
+    for ogr in masalar:
+        print(ogr)
+----------------------------------------------
+
+  for ogr in masalar:
+        x = ogr['ad']
+        print(x)
+#sadece isimleri yazdırma
+--------------------------------------------------
+import requests
+from bs4 import BeautifulSoup
+def get_url(url):
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content,'html.parser')
+    list2 = soup.find_all('div',{"class": "col-lg-6"})
+    for i in list2:
+        for link in i.find_all('a'):
+            my_link = link.get('href')+"\n"
+        yeni_link = '{}{}'.format("https:/www.milligazete.com.tr/arsiv" , my_link)
+        print(yeni_link)
+        with open ('irmak.txt'"a", encoding="utf-8") as file:
+         file.write(yeni_link)
+----------------------------------------------------------------------
+from milli  import *
+myurl='https://www.milligazete.com.tr/arsiv/2025-'#buraya link getir
+
+get_url(url=myurl)

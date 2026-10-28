@@ -1,0 +1,134 @@
+ırmak afşin 
+
+tekrar (toparlama) dersi 
+
+varriable (Değişken )
+Statement Conditioanal (Koşullu Durum)
+(if ,
+ elif,
+else(elseden sonra şart yazılmaz en son ihtimaldir)
+(pyhton))
+Loop (Döngüler)
+(
+pyhton kodu:
+ for i in range (len(x)):
+-------------------------
+ javascrit kodu : 
+for( let i = 0 ; i<0; i++) {
+  console.log( x[i]);
+ }
+---------------------------
+ bunların hepsini function (fonksiyon) kapsar
+
+class
+hepsini kapsar
+
+pyhton:
+
+a=5
+b= 'ali'
+c=['x','y','z']
+{key,value}
+
+{'ali':35} bagımsız soru isim ve notu
+------------------
+b=len(b)
+print(b)
+uzunluk bulma
+
+--------------------------
+java script 
+
+değişken atama
+let kendi scoop'u(süslü parantezi) dısında calısmaz (eski)
+var kendi scoop'u dısında calısabilir (yeni) 
+const (sabit değişken)
+-----------------------------
+function foo() {
+ let a = 5 
+ console.log(a)   
+ }
+
+ foo();
+-----------------------------
+sınavda global ve local farkını sorabilir!!!
+mantığını anla
+---------------------------
+ function myfunction(){{
+   var x = 64;
+   let y = 4;
+   const z = 77; } console.log(x) , 
+   console.log(y) ,
+   console.log(z) }
+((let kendi scopunda calısır 
+bu kodda calısmıyor!!!!!!!))
+---------------------------------
+loop döngüler örnek sınav sorusu
+
+let x = ['damla', 'irmak', 'sude', 'nergis'];
+
+for (let i = 0; i < x.length; i++) { 
+  console.log(i);
+  console.log(x[i]);
+
+function sans(a) {
+  let k = a+a
+  { var m = a*a 
+  var sonuc = m-k   }
+  return sonuc;
+}
+function sans2(a) {
+  let k = a+a
+  { var m = a*a 
+  let sonuc = m-k   }
+  return sonuc;
+}
+
+let x = ['damla', 'irmak', 'sude', 'nergis'];
+
+for (let i = 0; i < x.length; i++) {
+  let k = sans(x[i].length); 
+  let m = sans2(k);
+  console.log(m);
+}
+
+(isim uzunluklarının sayısını bulur ve o sayıyla carpar yani 
+irmak 5 harfli 5*5=25 daha sonra 25*5 yapar ve 625 olur )
+soruyu değiştirdi 
+ilk sans fonksiyonunu yaptı cıkan sonucu tekrar işleme sokup 
+en son ekrana cıktı verdi
+
+def foo{}: pyhton
+function foo(){} javascript
+----------------------
+sans(sans(sans(sans(2))))
+65536
+----------------------
+sans(sans(3))
+81
+-------------------------
+sans(sans(sans(3)))
+6561
+----------------------
+
+cd 
+ls 
+touch file olusturma 
+bash komutlarını ezberle
+---------------------------
+
+w3 school html dom dan soru cıkarmış 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

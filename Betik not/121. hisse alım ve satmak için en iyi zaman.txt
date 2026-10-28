@@ -1,0 +1,23 @@
+def en_yuksek_bulma(fiyat):
+    if not fiyat:
+        return 0
+    endusuk_fiyat = fiyat[0]
+    enyuksek_kar = 0 # bos liste mi değil mi
+    for i in range(1, len(fiyat)): # listeyi dögümüze sokuyoruz
+        suanki_fiyat = fiyat[i]
+        if suanki_fiyat < endusuk_fiyat:
+            endusuk_fiyat = suanki_fiyat
+        else:
+            kar = suanki_fiyat - endusuk_fiyat
+            if kar > enyuksek_kar:
+                enyuksek_kar = kar # alım mı satım mı yapıcak bakılır
+    return enyuksek_kar
+
+ornek_liste = [7, 1, 5, 3, 6, 4]
+
+sonuc = en_yuksek_bulma(ornek_liste)
+
+print("Elde edilen kâr:", sonuc)
+
+
+121. Hisse Alım ve Satmak İçin En İyi Zaman çözüm

@@ -1,0 +1,159 @@
+ırmak afsin
+
+echo "isminizi girin"
+read  name
+echo "yaşınızı girin"
+read yas
+
+--------------------------
+
+echo "birinci sayıyı girin:"
+read sayi1
+echo "ikinci sayiy girin"
+read sayi2
+
+echo "işlem secin"
+read menu
+
+echo "1- toplama"
+read menu
+echo "2- çıkarma "
+read menu 
+echo "3- çarpma"
+read menu
+echo "4- bölme" 
+read menu
+
+if [ $menu -eq  1 ]; then
+        echo "sonuc: $((sayi1+sayi2))"
+
+elif [ $menu -eq 2 ]; then
+        echo "sonuc: $((sayi1-sayi2))"
+
+ elif [ $menu -eq 3 ]; then
+        echo "sonuc: $((sayi1*sayi2))"
+
+elif [ $menu -eq 4 ]; then
+        echo "sonuc: $((sayi1/sayi2))"
+
+else    
+        echo "hata"
+fi
+ 
+ -------------------------------------------------------
+ BİLGİSAYAR AĞ PROGRAMLAMA
+ls Dizin içeriğini listeler
+pwd Geçerli dizini gösterir
+cd Dizin değiştirir
+mkdir Yeni klasör oluşturur
+rm Dosya/dizin siler
+cp Dosya/dizin kopyalar
+mv Dosya/dizin taşır veya adını değiştirir
+--------------------------------------------------------
+
+cd h1
+ cd (change directory) komutu, belirtilen dizine geçiş yapmak için kullanılır.
+ Ancak terminal "No such file or directory" hatası verdi, yani h1 adında bir klasör mevcut
+değil.
+ Önce mkdir h1 komutuyla klasörü oluşturup sonra cd h1 yapılmalı .
+ ls
+ ls komutu, o anki dizindeki dosya ve klasörleri listeler.
+ Komut çalıştırıldıktan sonra ekranda herhangi bir çıktı gözükmediği için dizinde dosya
+olmayabilir.
+touch deneme.txt
+ touch komutu, boş bir dosya oluşturur.
+ Burada deneme.txt adlı bir dosya oluşturulmuş.
+cat > deneme.txt
+ cat > dosya_adı komutu, dosyanın içine yazı yazmak için kullanılır.
+ Amaç: deneme.txt dosyasının içine yazı eklemek.
+ Kullanıcı "merhaba bu hafta yazdıklarımızdır" metnini dosyaya ekledi.
+cat deneme.txt (oto.)
+ cat dosya_adı komutu, dosyanın içeriğini okumak için kullanılır.
+ Amaç: deneme.txt içeriğini ekrana yazdırmak.
+ Dosyanın içeriği ekrana yazdırılmış: 
+merhaba bu hafta yazdıklarımızdır
+cat >> deneme.txt
+ cat >> dosya_adı komutu, dosyanın sonuna ekleme yapmak için kullanılır.
+ Amaç: Dosyanın sonuna yeni veri eklemek.
+ Kullanıcı "son eklenen yazılardır" metnini eklemiş.
+ Tekrar cat deneme.txt komutu çalıştırılınca, yeni eklenen içerik de görünecektir(oto).
+ Kullanıcı yazdığı metni kaydetmek için Ctrl + D tuş kombinasyonuna basmalıdır.
+---------------------------------------------------------------
+
+
+
+# Nested if statement
+num=5
+if [ $num -gt 0 ]; then
+  if [ $num -lt 10 ]; then
+    echo "Number is between 1 and 9"
+  fi
+fi
+
+iç içe if yapımı---------------------
+
+
+**************************
+
+
+
+
+# For loop example
+for i in {1..5}; do
+  echo "Iteration $i"
+done
+
+dizi oluşturma 
+--------------------------
+
+
+Example: While Loop
+
+# While loop example
+count=1
+while [ $count -le 5 ]; do
+  echo "Count is $count"
+  ((count++))
+done
+
+while = until 
+------------------------
+
+#!/bin/bash
+
+read -p "a değerini girin (0 veya 1): " a
+read -p "b değerini girin (0 veya 1): " b
+
+# Eğer a = 1 VE b = 1 ise
+if [[ $a -eq 1 && $b -eq 1 ]]; then
+    d="Sonuç: İkisi de doğru (VE çalıştı)"
+    echo "$d"
+
+# Eğer a = 1 VEYA b = 1 ise (üstteki if çalışmadığına göre sadece biri 1'dir)
+elif [[ $a -eq 1 || $b -eq 1 ]]; then
+    d="Sonuç: Sadece biri doğru (VEYA çalıştı)"
+    echo "$d"
+
+# İkisi de 0 ise
+else
+    d="Sonuç: İkisi de yanlış"
+    echo "$d"
+fi
+
+           ----------------
+           
+             GNU nano 7.2                                           sıla.sh                                                    
+echo "isminizi girin"
+read  name
+echo "yaşınızı girin"
+read yas
+
+
+
+
+
+
+
+
+
+

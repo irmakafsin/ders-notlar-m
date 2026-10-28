@@ -1,0 +1,63 @@
+for in range (0,10,2) 
+dizi olusturma 
+while True: sonsuz dongü
+----------------------------------
+def betik(listem):
+    sayac = 0
+    try:
+        while True:
+            x = listem[sayac]
+            sayac = sayac + 1
+    except :
+
+        print(sayac)
+
+------------------------------------
+from main import betik
+dizi2=['ali', 'sude','ırmak','damla']
+betik(dizi2)
+(yeni sayfa actık new pyhton file )
+-----------------------------------
+
+fonksiyon geri değer dondurur(int string gibi)
+prosedur ise geri değer dondurulmez (void gibi)
+------------------------------------------
+
+    return sayac
+ekledik kodumuzun sonuna 
+--------------------------
+def trade (deger):
+    if deger<3:
+        print('hiise alımı yapıldı')
+    elif deger>7:
+        print('hiise satısı yapıldı')
+    else:
+        pass
+------------------------------------
+rsi=int(betik(dizi2))
+print(type(rsi))
+trade(rsi)
+------------------------------
+diziler=[
+['ırmak','damla'],
+[ 'sude','ırmak','damla'],
+['ali', 'sude','ırmak'],
+['ali', 'sude','damla'],
+['ali','damla','ayse'],
+['sude','ırmak']
+]
+for i in diziler:(burda bir tanne daha for açsaydık
+teker teker yazardı)
+    print(dizi)
+-----------------------------
+
+import random
+    r=random.randint(1,100)(random 1 100 arası sayı üreticek)
+------------------------------------------------
+    import random
+    while True:
+     r=random.randint(1,100)
+     trade(r)
+------------------------------------
+
+

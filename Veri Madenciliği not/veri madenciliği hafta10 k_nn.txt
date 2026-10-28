@@ -1,0 +1,176 @@
+hafta-10 veri madenciliği ırmak afsin
+(sınıflandırma problemindeki metrikler)
+
+tp= true pozitive
+tn= true negative
+ft= false pozitive
+fn= false negative
+actuall data= gercek data
+prediction data= tahmin data
+
+
+precision (tutarlılık)= tp/tp+tn
+
+recall (duyarlılık)= tp/tp+fn
+
+accuracy (doğruluk)= tp/tp+tn+fn+ft
+yani tp/all(hepsi)
+
+f1_score= 2* (precision*recall)/(precision+recall)
+harmonik ort
+(eşit dağılmayan veri kümelerinde hatalı model 
+secimi yapmaması için kullanılır)
+---------------------------------------------------------
+k_nn(kodlar)
+
+import pandas as pd
+
+data = {
+    "gelir": [32000, 45000, 58000, 62000, 29000, 70000, 52000, 81000, 47000, 90000,
+              61000, 38000, 55000, 73000, 34000, 68000, 49000, 76000, 43000, 64000,
+              57000, 36000, 85000, 51000],
+    "yas": [22, 25, 27, 30, 21, 35, 28, 40, 26, 45,
+            31, 24, 29, 38, 23, 34, 27, 39, 25, 33,
+            30, 22, 42, 28],
+    "mevcut_borc": [18000, 12000, 10000, 9000, 15000, 8000, 14000, 5000, 11000, 4000,
+                    9500, 17000, 13000, 6000, 16000, 7000, 12500, 5500, 14500, 8500,
+                    10000, 17500, 4500, 13500],
+    "kredi_puani": [480, 520, 610, 640, 450, 700, 590, 760, 560, 790,
+                    650, 500, 600, 720, 490, 690, 570, 740, 530, 660,
+                    620, 470, 780, 585],
+    "sonuc": [0, 0, 1, 1, 0, 1, 0, 1, 0, 1,
+              1, 0, 1, 1, 0, 1, 0, 1, 0, 1,
+              1, 0, 1, 0]
+}
+
+df = pd.DataFrame(data)
+print(df)
+----------------------------------------
+X = df[["gelir", "yas", "mevcut_borc", "kredi_puani"]]
+y = df["sonuc"]
+--------------------------------------------
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.25, random_state=42
+)
+--------------------------------------------
+
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+knn_model = KNeighborsClassifier(n_neighbors=3)
+knn_model.fit(X_train, y_train)
+
+knn_pred = knn_model.predict(X_test)
+     
+------------------------------------------
+print("=== KNN ===")
+print("Accuracy:", accuracy_score(y_test, knn_pred))
+print("Confusion Matrix:")
+print(confusion_matrix(y_test, knn_pred))
+print("Classification Report:")
+print(classification_report(y_test, knn_pred))
+     
+---------------------------------------------
+
+yeni_musteri = [[54000, 22, 8500, 670]]
+tahmin = knn_model.predict(yeni_musteri)
+
+if tahmin[0] == 1:
+    print("Başvuru ONAYLANIR")
+else:
+    print("Başvuru REDDEDİLİR")
+-----------------------------------
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.neighbors import KNeighborsClassifier
+
+knn_pipeline = Pipeline([
+    ("scaler", StandardScaler()),
+    ("knn", KNeighborsClassifier(n_neighbors=3))
+])
+
+knn_pipeline.fit(X_train, y_train)
+knn_pred = knn_pipeline.predict(X_test)
+
+print("=== Ölçeklenmiş KNN ===")
+print("Accuracy:", accuracy_score(y_test, knn_pred))
+print("Confusion Matrix:")
+print(confusion_matrix(y_test, knn_pred))
+print("Classification Report:")
+print(classification_report(y_test, knn_pred))
+-----------------------------------------
+yeni_musteri2 = [[54000, 22, 8500, 670]]
+tahmin = knn_model.predict(yeni_musteri2)
+
+if tahmin[0] == 1:
+    print("Başvuru ONAYLANIR")
+else:
+    print("Başvuru REDDEDİLİR")
+-------------------------------------------
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.preprocessing import StandardScaler
+
+data = {
+    "gelir": [32000, 45000, 58000, 62000, 29000, 70000, 52000, 81000, 47000, 90000,
+              61000, 38000, 55000, 73000, 34000, 68000, 49000, 76000, 43000, 64000,
+              57000, 36000, 85000, 51000],
+    "yas": [22, 25, 27, 30, 21, 35, 28, 40, 26, 45,
+            31, 24, 29, 38, 23, 34, 27, 39, 25, 33,
+            30, 22, 42, 28],
+    "mevcut_borc": [18000, 12000, 10000, 9000, 15000, 8000, 14000, 5000, 11000, 4000,
+                    9500, 17000, 13000, 6000, 16000, 7000, 12500, 5500, 14500, 8500,
+                    10000, 17500, 4500, 13500],
+    "kredi_puani": [480, 520, 610, 640, 450, 700, 590, 760, 560, 790,
+                    650, 500, 600, 720, 490, 690, 570, 740, 530, 660,
+                    620, 470, 780, 585],
+    "sonuc": [0, 0, 1, 1, 0, 1, 0, 1, 0, 1,
+              1, 0, 1, 1, 0, 1, 0, 1, 0, 1,
+              1, 0, 1, 0]
+}
+
+df = pd.DataFrame(data)
+
+# Görselleştirme için 2 değişken seçiyoruz
+X = df[["gelir", "kredi_puani"]].values
+y = df["sonuc"].values
+
+# KNN uzaklık tabanlı olduğu için ölçekleme önemli
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+
+# Model
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_scaled, y)
+
+# Karar sınırları için grid oluşturma
+x_min, x_max = X_scaled[:, 0].min() - 1, X_scaled[:, 0].max() + 1
+y_min, y_max = X_scaled[:, 1].min() - 1, X_scaled[:, 1].max() + 1
+
+xx, yy = np.meshgrid(
+    np.arange(x_min, x_max, 0.02),
+    np.arange(y_min, y_max, 0.02)
+)
+
+# Her grid noktası için tahmin
+Z = knn.predict(np.c_[xx.ravel(), yy.ravel()])
+Z = Z.reshape(xx.shape)
+
+# Grafik
+plt.figure(figsize=(12, 7))
+plt.contourf(xx, yy, Z, alpha=0.3)
+
+plt.scatter(X_scaled[y == 0, 0], X_scaled[y == 0, 1], s=120, marker="o", label="RED")
+plt.scatter(X_scaled[y == 1, 0], X_scaled[y == 1, 1], s=120, marker="^", label="ONAY")
+
+plt.xlabel("Gelir (ölçeklenmiş)")
+plt.ylabel("Kredi Puanı (ölçeklenmiş)")
+plt.title("KNN Karar Sınırları")
+plt.legend()
+plt.grid(True)
+plt.show()
+--------------------------------------------------------------------------------------

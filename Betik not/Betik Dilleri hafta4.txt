@@ -1,0 +1,24 @@
+tarih='09.02.2026'
+date=tarih.split('.')
+# verileri ayırdık
+print(date[0])
+
+for i in date:
+    print(i)
+---------------------------------------------
+
+dizim = ['Ank - ara', 'İsta - nbul', 'İz - mir']
+
+
+def duzgunlestir(arr):
+    for i in arr:
+        x = i.split('-')
+        isim = ''
+        for parca in x:
+            isim += parca.strip()
+
+        print('============')
+        print(isim)
+-----------------------------------
+from date import *
+iller = ['Ank - ara', 'İsta - nbul', 'İz - mir']

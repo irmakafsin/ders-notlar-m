@@ -1,0 +1,95 @@
+ırmak afsin
+<!DOCTYPE html>
+<html>
+<body>
+<h1>mrb irmak</h1>
+
+<button type="button" onclick="document.getElementById('demo').innerHTML = irmakkk">
+Click me to display Date and Time.</button>
+
+<p id="demo">irmak<3</p>
+
+</body>
+</html> 
+-----------------------------------------------
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p>JavaScript can change HTML attribute values.</p>
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">çilek</button>
+
+<img id="myImage" src="pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">erik</button>
+
+</body>
+</html>
+-------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change the style of an HTML element.</p>
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">büyüt</button>
+<button type="button" onclick="document.getElementById('demo').style.fontSize='15px'">kucult</button>
+
+
+</body>
+</html> 
+-------------------------------------------
+
+for (let i = 0; i < cars.length; i++) {
+  text += cars[i] + "<br>";
+}
+----------------------------------------
+
+arr=['irmak','sude','damla','a','b','c']
+ for (var i=0;i<arr.length;i++) {
+alert(arr[i);
+}
+--------------------------------------
+
+const= değiştirilemez (sabit)
+var = değiştirilebilir
+let= eski var
+değişken tanımlama
+---------------------------
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+
+    <h1 id="demo"></h1>
+
+    <script>
+        const arr = ['Irmak', 'Sude', 'Damla', 'A', 'B', 'C'];
+        let i = 0;
+
+        function degistir() {
+            document.getElementById("demo").innerHTML = "I love " + arr[i];
+            i++;
+
+            if (i >= arr.length){
+                i = 0;
+            }
+        }
+
+        degistir();
+        setTimeout(degistir, 2000);
+    </script>
+
+</body>
+</html>
+
+
